@@ -2,8 +2,8 @@ public class Main {
     public static void main(String[] args) {
 //        Task1();
 //        Task2();
-        Task3();
-
+//        Task3();
+        Task4();
     }
 
     static void Task1() {
@@ -30,5 +30,17 @@ public class Main {
         String s1 = "Веселый";
         String s2 = "Грустный";
         System.out.printf("Для пары [%s;%s] большее - %s\n", s1, s2, Task3.getMax(s1, s2));
+    }
+
+    static void Task4() {
+        DataContainer<String> dataContainer = new DataContainer<>(String::new);
+        dataContainer.add("Привет");
+        dataContainer.add("меня");
+        dataContainer.add("зовут");
+        dataContainer.add("Дмитрий");
+        dataContainer.print();
+        dataContainer.sort((s1,s2) -> s2.length() - s1.length());
+        System.out.println("После сортировки...");
+        dataContainer.print();
     }
 }
